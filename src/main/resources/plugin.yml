@@ -1,0 +1,10 @@
+name: ${project.name}
+main: net.enelson.sopregionlimit.SopRegionLimit
+version: ${project.version}
+authors: [E_NeLsOn]
+api-version: "1.16"
+depend: [SopLib, WorldEdit, WorldGuard]
+softdepend: [PlaceholderAPI]
+commands:
+  sopregionlimit:
+    aliases: [sregionlimit, aregionlimiter]

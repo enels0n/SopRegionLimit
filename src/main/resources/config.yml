@@ -1,0 +1,78 @@
+debug: false
+
+cleaner:
+  enabled: true
+  period: 3600
+  expire-time-days: 30
+  log-in-console: true
+  filter:
+    ignore-without-owners: true
+    ignore-worlds: []
+    ignore-regions:
+      - "__global__"
+
+limit:
+  autoexpand: true
+  autoexpand-down: 15
+  in-global-default-flags:
+    pvp: DENY
+  in-own-region-default-flags: {}
+  in-global:
+    default:
+      max-count: 1
+      vertical-expand: false
+      x-min: 15
+      x-max: 40
+      y-min: 15
+      y-max: 40
+      z-min: 15
+      z-max: 40
+    vip:
+      max-count: 3
+      vertical-expand: false
+      x-min: 15
+      x-max: 50
+      y-min: 15
+      y-max: 50
+      z-min: 15
+      z-max: 50
+  in-own-region:
+    default:
+      max-count: 1
+      vertical-expand: false
+      x-min: 1
+      x-max: 40
+      y-min: 1
+      y-max: 40
+      z-min: 1
+      z-max: 40
+
+limit-per-world:
+  in-global: {}
+  in-own-region: {}
+
+messages:
+  reload: "&aSopRegionLimit reloaded."
+  cleaner-delete-region: "&7Region &f{region} &7has been deleted by cleaner."
+  claim-min-x: "&cThe size of the selected area along the X axis must not be less than &e{size}&c."
+  claim-max-x: "&cThe size of the selected area along the X axis must not be more than &e{size}&c."
+  claim-min-y: "&cThe size of the selected area along the Y axis must not be less than &e{size}&c."
+  claim-max-y: "&cThe size of the selected area along the Y axis must not be more than &e{size}&c."
+  claim-min-z: "&cThe size of the selected area along the Z axis must not be less than &e{size}&c."
+  claim-max-z: "&cThe size of the selected area along the Z axis must not be more than &e{size}&c."
+  current-size: "&7Current size: &fX={x} Y={y} Z={z}"
+  unknown-region-type: "&cUnknown region type: &e{type}"
+  max-count-in-global: "&cYou have reached the maximum number of global regions."
+  max-count-in-own-region: "&cYou have reached the maximum number of child regions."
+  region-exist: "&cA region with that name already exists."
+  success-in-global: "&aRegion named &e{region} &ahas been successfully created."
+  success-in-own-region: "&aChild region named &e{region} &ahas been successfully created."
+  another-region-affected: "&cAnother region has been affected."
+  invalid-world: "&cWorld &e{world} &cdoes not exist."
+  invalid-region: "&cRegion &e{region} &cdoes not exist in world &e{world}&c."
+  invalid-name: "&cInvalid region name. Use 3-20 Latin letters, numbers, or underscore."
+  no-perm-remove: "&cYou do not have permission to remove this region."
+  remove-region: "&aRegion &e{region} &ahas been removed."
+  remove-region-parent: "&aRegion &e{region} &aand its child regions &e{children} &ahave been removed."
+  remove-region-child: "&aChild region &e{region} &ahas been removed."
+  something-wrong: "&cSomething went wrong. Contact the administrator."
