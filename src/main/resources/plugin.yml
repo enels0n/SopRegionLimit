@@ -7,4 +7,4 @@ depend: [SopLib, WorldEdit, WorldGuard]
 softdepend: [PlaceholderAPI]
 commands:
   sopregionlimit:
-    aliases: [sregionlimit, aregionlimiter]
+    aliases: [sregionlimit]

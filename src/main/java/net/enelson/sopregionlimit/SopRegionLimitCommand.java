@@ -20,7 +20,7 @@ public final class SopRegionLimitCommand implements CommandExecutor {
         }
 
         if ("reload".equalsIgnoreCase(args[0])) {
-            if (!sender.hasPermission("sopregionlimit.admin") && !sender.hasPermission("aregionlimiter.admin") && !sender.isOp()) {
+            if (!sender.hasPermission("sopregionlimit.admin") && !sender.isOp()) {
                 sender.sendMessage(ChatColor.RED + "No permission.");
                 return true;
             }

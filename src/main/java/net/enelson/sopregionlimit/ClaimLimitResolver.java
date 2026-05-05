@@ -72,7 +72,6 @@ public final class ClaimLimitResolver {
 
     private boolean hasGroupPermission(Player player, ClaimType claimType, String group) {
         return player.hasPermission("sopregionlimit." + claimType.getPath() + "." + group)
-                || player.hasPermission("aregionlimiter." + claimType.getPath() + "." + group)
                 || player.hasPermission("magesregionlimit." + group);
     }
 

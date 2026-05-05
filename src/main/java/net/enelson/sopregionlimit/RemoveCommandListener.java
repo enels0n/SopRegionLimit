@@ -76,7 +76,7 @@ public final class RemoveCommandListener implements Listener {
         }
 
         LocalPlayer localPlayer = WorldGuardPlugin.inst().wrapPlayer(player);
-        if (!region.isOwner(localPlayer) && !player.isOp() && !player.hasPermission("sopregionlimit.bypass") && !player.hasPermission("aregionlimiter.bypass")) {
+        if (!region.isOwner(localPlayer) && !player.isOp() && !player.hasPermission("sopregionlimit.bypass")) {
             player.sendMessage(plugin.message(player, "no-perm-remove"));
             return;
         }

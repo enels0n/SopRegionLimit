@@ -118,7 +118,13 @@ public final class SopRegionLimit extends JavaPlugin {
     }
 
     public String message(CommandSender sender, String path) {
-        String raw = getConfig().getString("messages." + path, "");
+        String raw = getConfig().getString("messages." + path);
+        if (raw == null) {
+            raw = getConfig().getString("messages.something-wrong", "&cSomething went wrong. Contact the administrator.");
+        }
+        if (raw == null) {
+            raw = "&cSomething went wrong. Contact the administrator.";
+        }
         if (sender instanceof org.bukkit.entity.Player && Bukkit.getPluginManager().isPluginEnabled("PlaceholderAPI")) {
             raw = PlaceholderAPI.setPlaceholders((org.bukkit.entity.Player) sender, raw);
         }

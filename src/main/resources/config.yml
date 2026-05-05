@@ -61,6 +61,7 @@ messages:
   claim-min-z: "&cThe size of the selected area along the Z axis must not be less than &e{size}&c."
   claim-max-z: "&cThe size of the selected area along the Z axis must not be more than &e{size}&c."
   current-size: "&7Current size: &fX={x} Y={y} Z={z}"
+  selection-incomplete: "&cFirst make a full WorldEdit selection with two points."
   unknown-region-type: "&cUnknown region type: &e{type}"
   max-count-in-global: "&cYou have reached the maximum number of global regions."
   max-count-in-own-region: "&cYou have reached the maximum number of child regions."

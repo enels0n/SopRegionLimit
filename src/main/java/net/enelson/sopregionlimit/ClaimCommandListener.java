@@ -43,9 +43,7 @@ public final class ClaimCommandListener implements Listener {
         }
 
         Player player = event.getPlayer();
-        if (player.isOp() || hasPermission(player, "bypass")) {
-            return;
-        }
+        boolean bypass = hasPermission(player, "bypass");
 
         event.setCancelled(true);
 
@@ -57,6 +55,7 @@ public final class ClaimCommandListener implements Listener {
 
         SelectionResult selectionResult = getSelection(player);
         if (selectionResult == null) {
+            player.sendMessage(plugin.message(player, "selection-incomplete"));
             return;
         }
         if (!selectionResult.isAllowed()) {
@@ -72,19 +71,19 @@ public final class ClaimCommandListener implements Listener {
             return;
         }
 
-        if (touchesForeignRegion(player, localPlayer, cuboid, regionManager)) {
+        if (!bypass && touchesForeignRegion(player, localPlayer, cuboid, regionManager)) {
             player.sendMessage(plugin.message(player, "another-region-affected"));
             return;
         }
 
         ClaimContext claimContext = resolveClaimContext(localPlayer, cuboid, regionManager);
         ClaimLimits limits = plugin.getClaimLimitResolver().resolve(player, claimContext.getClaimType());
-        if (!checkDimensionLimits(player, cuboid, limits)) {
+        if (!bypass && !checkDimensionLimits(player, cuboid, limits)) {
             return;
         }
 
         long ownedCount = countRegions(localPlayer, regionManager, claimContext.getClaimType());
-        if (limits.getMaxCount() >= 0 && ownedCount >= limits.getMaxCount()) {
+        if (!bypass && limits.getMaxCount() >= 0 && ownedCount >= limits.getMaxCount()) {
             player.sendMessage(plugin.message(player, claimContext.getClaimType() == ClaimType.IN_GLOBAL ? "max-count-in-global" : "max-count-in-own-region"));
             return;
         }
@@ -302,7 +301,6 @@ public final class ClaimCommandListener implements Listener {
 
     private boolean hasPermission(Player player, String suffix) {
         return player.hasPermission("sopregionlimit." + suffix)
-                || player.hasPermission("aregionlimiter." + suffix)
                 || player.hasPermission("magesregionlimit." + suffix);
     }
 
