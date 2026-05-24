@@ -5,7 +5,7 @@
 
     <groupId>net.enelson.sopregionlimit</groupId>
     <artifactId>SopRegionLimit</artifactId>
-    <version>0.0.1</version>
+    <version>1.0.0</version>
     <name>SopRegionLimit</name>
 
     <properties>
@@ -56,7 +56,7 @@
         <dependency>
             <groupId>net.enelson.sopli.lib</groupId>
             <artifactId>soplib-core</artifactId>
-            <version>0.0.1</version>
+            <version>1.0.0</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
