@@ -6,7 +6,7 @@ It intercepts WorldGuard claim/remove commands, validates WorldEdit selections, 
 
 ## Requirements
 
-- `Java 8`
+- `Java 8+`
 - `Paper/Spigot` on any server version supported by `SopLib`
 - [SopLib](https://github.com/enels0n/SopLib)
 - [WorldEdit](https://modrinth.com/plugin/worldedit) or [FastAsyncWorldEdit](https://modrinth.com/plugin/fastasyncworldedit)
@@ -15,7 +15,7 @@ It intercepts WorldGuard claim/remove commands, validates WorldEdit selections, 
 
 ## Version Model
 
-`SopRegionLimit` is intentionally compiled against `Spigot 1.16.5` and `Java 8`.
+`SopRegionLimit` is intentionally compiled against `Spigot 1.16.5` and kept compatible with `Java 8+`.
 
 The goal is that gameplay plugins do not need their own rebuild every time a new Minecraft version appears.  
 Runtime compatibility is delegated to `SopLib`.
@@ -28,7 +28,7 @@ In practice that means:
 
 So the effective support policy is:
 
-- compile target: `1.16.5` / `Java 8`
+- compile target: `1.16.5` / `Java 8+`
 - runtime support: whatever versions are currently supported by `SopLib`
 
 ## What It Does
