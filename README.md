@@ -6,11 +6,30 @@ It intercepts WorldGuard claim/remove commands, validates WorldEdit selections, 
 
 ## Requirements
 
-- `Paper/Spigot 1.16.5+`
-- `WorldEdit`
-- `WorldGuard`
-- `SopLib`
-- `PlaceholderAPI` is optional and is only used inside plugin messages
+- `Java 8`
+- `Paper/Spigot` on any server version supported by `SopLib`
+- [SopLib](https://github.com/enels0n/SopLib)
+- [WorldEdit](https://modrinth.com/plugin/worldedit) or [FastAsyncWorldEdit](https://modrinth.com/plugin/fastasyncworldedit)
+- [WorldGuard](https://modrinth.com/plugin/worldguard)
+- [PlaceholderAPI](https://modrinth.com/plugin/placeholderapi/versions) is optional and is only used inside plugin messages
+
+## Version Model
+
+`SopRegionLimit` is intentionally compiled against `Spigot 1.16.5` and `Java 8`.
+
+The goal is that gameplay plugins do not need their own rebuild every time a new Minecraft version appears.  
+Runtime compatibility is delegated to `SopLib`.
+
+In practice that means:
+
+- if a new server version is supported by `SopLib`
+- and the plugin itself does not use version-specific NMS/API directly
+- then `SopRegionLimit` should continue to work without a dedicated version update
+
+So the effective support policy is:
+
+- compile target: `1.16.5` / `Java 8`
+- runtime support: whatever versions are currently supported by `SopLib`
 
 ## What It Does
 
