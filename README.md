@@ -60,11 +60,6 @@ Group permissions are resolved dynamically from config:
 - `sopregionlimit.in-global.<group>`
 - `sopregionlimit.in-own-region.<group>`
 
-Legacy compatibility is also still accepted in some places:
-
-- `magesregionlimit.<group>`
-- `magesregionlimit.bypass`
-
 ## Claim Behavior
 
 When a player runs a claim command:

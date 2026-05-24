@@ -300,8 +300,7 @@ public final class ClaimCommandListener implements Listener {
     }
 
     private boolean hasPermission(Player player, String suffix) {
-        return player.hasPermission("sopregionlimit." + suffix)
-                || player.hasPermission("magesregionlimit." + suffix);
+        return player.hasPermission("sopregionlimit." + suffix);
     }
 
     private boolean isClaimCommand(String[] args) {

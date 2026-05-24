@@ -71,8 +71,7 @@ public final class ClaimLimitResolver {
     }
 
     private boolean hasGroupPermission(Player player, ClaimType claimType, String group) {
-        return player.hasPermission("sopregionlimit." + claimType.getPath() + "." + group)
-                || player.hasPermission("magesregionlimit." + group);
+        return player.hasPermission("sopregionlimit." + claimType.getPath() + "." + group);
     }
 
     private int getInt(ConfigurationSection section, String path, int def) {
